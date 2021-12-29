@@ -6,10 +6,10 @@ function UserResults() {
 	const [users, setUsers] = useState([])
 	const [isLoading, setIsLoading] = useState(true)
 	useEffect(() => {
-		fetchUser()
+		fetchUsers()
 	}, [])
 
-	const fetchUser = async () => {
+	const fetchUsers = async () => {
 		const response = await fetch(`${process.env.REACT_APP_GITHUB_URL}/users`, {
 			headers: {
 				Authorization: `token ${process.env.REACT_APP_GITHUB_TOKEN}`,
