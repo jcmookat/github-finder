@@ -12,7 +12,7 @@ export const GithubProvider = ({ children }) => {
 	const fetchUsers = async () => {
 		const response = await fetch(`${GITHUB_URL}/users`, {
 			headers: {
-				Authorization: `token ${GITHUB_TOKEN}`,
+				// Authorization: `token ${GITHUB_TOKEN}`,
 			},
 		})
 		const data = await response.json()
@@ -26,6 +26,7 @@ export const GithubProvider = ({ children }) => {
 			value={{
 				users,
 				isLoading,
+				fetchUsers,
 			}}>
 			{children}
 		</GithubContext.Provider>
